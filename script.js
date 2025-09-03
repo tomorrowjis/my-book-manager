@@ -60,7 +60,7 @@
         }
 
         function removeBook(id) {
-            const element = document.getElementById(id);
+            const element = document.getElementById(`card-${id}`);
             element.remove();
         }
 
