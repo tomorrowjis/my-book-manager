@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="button-area">
+        <div class="button-bg">
+            <button class="newBtn" onclick="openForm()" id="addNew">
+                Add New Book
+            </button>
+        </div>
+    </div>
+    <dialog id="bookForm">
+        <div class="bookInfo">
+
+            <label for="title">Title:</label>
+            <input type="text" class="box" id="title" name="title">
+            <label for="author">Author: </label>
+            <input type="text" class="box" id="author" name="author">
+            <label for="pagenumber">Page Number:</label>
+            <input type="text" class="box" id="pagenumber" name="pagenumber">
+            <label for="description">Description:</label>
+            <textarea id="description" class="box" name="description"></textarea>
+
+        </div>
+        <button class="btn" id="addBook" onclick="addBook()">
+            Add
+        </button>
+        <button class="btn" id="cancel" onclick="cancel()">
+            Cancel
+        </button>
+    </dialog>
+
+
+    <dialog id="editForm">
+        <div class="bookInfo">
+
+            <label for="titleEdit">Title:</label>
+            <input type="text" class="box" id="titleEdit" name="title">
+            <label for="authorEdit">Author: </label>
+            <input type="text" class="box" id="authorEdit" name="author">
+            <label for="pagenumberEdit">Page Number:</label>
+            <input type="text" class="box" id="pagenumberEdit" name="pagenumber">
+            <label for="descriptionEdit">Description:</label>
+            <textarea id="descriptionEdit" class="box" name="description"></textarea>
+
+        </div>
+        <button class="btn" id="saveBook">
+            Save
+        </button>
+        <button class="btn" id="cancelEdit" onclick="cancelEdit()">
+            Cancel
+        </button>
+    </dialog>
+
+    <div class="container" id="cardBox">
+
+    </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
