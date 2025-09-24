@@ -1,7 +1,7 @@
 body {
             margin: 0;
             background-color: rgb(242, 242, 242);
-            background: black;
+            background: url("illustration-du-ciel-nocturne-de-l-anime.jpg") no-repeat;
             background-attachment: fixed;
             background-position: 50% 50%;
             background-size: cover;
