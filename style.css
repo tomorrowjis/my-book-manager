@@ -1,4 +1,4 @@
-body {
+      body {
             margin: 0;
             background-color: rgb(242, 242, 242);
             background: url("illustration-du-ciel-nocturne-de-l-anime.jpg") no-repeat;
@@ -27,6 +27,14 @@ body {
             margin-left: 60px;
         }
 
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
         .card {
             height: 230px;
             width: 350px;
@@ -34,6 +42,7 @@ body {
             box-shadow: 4px 4px 6px 1px rgba(0, 0, 0, 0.2);
             background-color: rgb(240, 239, 239);
             border-left: 6px solid rgb(35, 7, 119);
+            animation: zoomIn 0.3s ease-in-out;
         }
 
         .btn,
@@ -64,7 +73,7 @@ body {
             color: rgb(255, 255, 255);
             font-weight: 700;
             margin-top: 2px;
-             transform: scale(1.05);
+            transform: scale(1.05);
             cursor: pointer;
         }
 
@@ -119,7 +128,7 @@ body {
             margin-top: 30px;
             align-items: center;
             align-content: center;
-            margin-left: 575px;
+            margin-left: 573px;
         }
 
         .box {
