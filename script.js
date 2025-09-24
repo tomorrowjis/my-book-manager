@@ -39,7 +39,7 @@
             addCard(title, author, pagenumber, id_val, description);
             dialog.close();
 
-        } console.log(books);
+        }
 
         function addCard(title, author, pagenumber, id_val, description) {
 
@@ -47,7 +47,7 @@
             <div class="card" id="card-${id_val}">
             <div class="cardInfo">
              <h3 id="title-${id_val}">${title}</h3>
-             <h5 id="author-${id_val}">${author}</h5>
+             <h5 id="author-${id_val}">${author} - ${pagenumber} pages</h5>
              <p id="desc-${id_val}">${description}</p>
              </div>
             <div class="cardBottom">
@@ -74,15 +74,10 @@
             console.log(id_val);
             const targetBook = books.find(item => item.id === id_val);
             console.log(targetBook);
-            const title = targetBook.bookname;
-            document.getElementById("titleEdit").value = title;
-            const author = targetBook.author;
-            document.getElementById("authorEdit").value = author;
-            const pagenumber = targetBook.pagenum;
-            document.getElementById("pagenumberEdit").value = pagenumber;
-
-            const description = targetBook.description;
-            document.getElementById("descriptionEdit").value = description;
+            document.getElementById("titleEdit").value = targetBook.bookname;
+            document.getElementById("authorEdit").value = targetBook.author;
+            document.getElementById("pagenumberEdit").value = targetBook.pagenum;
+            document.getElementById("descriptionEdit").value = targetBook.description;
 
             editbook.showModal();
         }
@@ -100,7 +95,7 @@
 
             const card = document.getElementById(`card-${currentEditingID}`);
             card.querySelector("h3").textContent = newtitle;
-            card.querySelector("h5").textContent = newauthor;
+            card.querySelector("h5").textContent = newauthor + " - " + newpagenumber + " pages";
             card.querySelector("p").textContent = newdesc;
 
             targetBook.bookname = newtitle;
@@ -115,5 +110,4 @@
         function cancelEdit() {
             editbook.close();
         }
-
 
