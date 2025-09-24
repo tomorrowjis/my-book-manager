@@ -42,9 +42,11 @@
         }
 
         function addCard(title, author, pagenumber, id_val, description) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.id = `card-${id_val}`;
 
             let cardHTML = `
-            <div class="card" id="card-${id_val}">
             <div class="cardInfo">
              <h3 id="title-${id_val}">${title}</h3>
              <h5 id="author-${id_val}">${author} - ${pagenumber} pages</h5>
@@ -53,15 +55,18 @@
             <div class="cardBottom">
                 <button onclick="removeBook('${id_val}')" class="btn">Remove</button>
                 <button onclick="editBook('${id_val}')" class="btn">Edit</button>
-             </div>
-            </div>`;
-            document.getElementById("cardBox").innerHTML += cardHTML;
-
+             </div>`;
+            
+            card.innerHTML = cardHTML;
+            document.getElementById("cardBox").appendChild(card);
         }
 
         function removeBook(id) {
             const element = document.getElementById(`card-${id}`);
-            element.remove();
+            element.classList.add('zoom-out');
+            element.addEventListener('animationend', () => {
+                element.remove();
+            });
         }
 
         const editbook = document.getElementById("editForm");
@@ -111,3 +116,5 @@
             editbook.close();
         }
 
+
+    </script>
